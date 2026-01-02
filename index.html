@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>instagram: @pythonlearnerr</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      text-align: center;
+      padding-top: 40px;
+    }
+    h2 { margin-bottom: 30px; }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #yes {
+      background: #4CAF50;
+      color: white;
+    }
+    #no {
+      background: #f44336;
+      color: white;
+      position: absolute;
+      left: 160px;
+      top: 200px;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>are you gay?</h2>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div class="popup" id="popup">Thanks for Accepting</div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const popup = document.getElementById('popup');
+
+    noBtn.addEventListener('mouseenter', () => {
+      const maxX = 320;
+      const maxY = 320;
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+
+    document.getElementById('yes').addEventListener('click', () => {
+      popup.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
